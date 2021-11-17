@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1) default binding - normal function call
+        //default binding exp 1 & 2
+        //exp 1
+function person(){
+    console.log(this);
+}
+person(); // we are simply calling it. It is called default binding, rule of default binding is this will points the global object 
+// exp 2
+function person(){
+    var fname="Shrad"
+    var lname ="Kaushik"
+    console.log(this.fname,this.lname) // this is pointung to the global , and fname and lname are local variables , so it will gives the undefined output
+}
+// 2) implicit binding - f() call using dot
+function persona(){
+    var fname="Shrad"
+    var lname ="Kaushik"
+    console.log(this.fname,this.lname) 
+}
+var newpar1 ={
+    fname: "something",
+    lname: "anything",
+    obj : persona
+}
+newpar1.obj(); // it will show something and anything because execution context in this object
+// Remember ? where function is invoked (not where it is declared!) 
+
+// #3 Explicit Binding
+// When we as developers, want a custom object to be 'this' reference for the function.
+var obj = {a: "cuatom object"}
+var a= "Global";
+function guessThis(){
+    return this.a;
+}
+console.log(guessThis());
+console.log(guessThis.call(obj)); // call takes object as an argument to point this
+console.log(guessThis.apply(obj)) 
+var arr = [10,20,30,40,50,60,70,80,90,100]
+var arr1= [1,2,3,4,5,6]
+var firstSlice = arr.slice(2,6)
+var secondSlice = arr.call(arr,2,6)
+var thirdSlice = arr.apply(arr,[2,6])
+var fourthSlice = arr.call(arr1,2,6) // it will show the 2345 
+// the difference between call and apply is call takes 2nd argument as comma seperated arguments and where apply takes array as argument
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

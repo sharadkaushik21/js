@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+        function named(){
+            document.write(`<h2>Named Function</h2>`)
+        }
+        const addFunc= function(v1,v2){
+            return v1+v2;
+        }
+        named()
+           document.write(` ${addFunc(12,14)}`)
+          //mysirg
+          function square(v1){   // function declaration
+              return v1*v1;
+          } 
+
+          //function expression starts with let or var
+          //It has two types. named and anonymous
+          let add5 = function(v1){  // function expression // It is made by anonymous function
+              return v1+5;
+          }
+          let add6 = function add(var1){ // named function expression. and this is the best practice
+              return var1 +6;
+          }
+          //if our project is big we should use named func exp
+          //why named function expression ?
+          //Two advantages of named function expression
+          // * Self Reference
+                //. Used for recursion        note: we can also use anonymous func exp as well
+                //. Unbinding of click handlers
+          // Debugging during Error
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

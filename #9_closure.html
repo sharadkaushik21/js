@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+     /*    A Closure is,when an inner function remembers it's lexical environment when it is called outside it's lexical environment.
+        inner function example
+        var globalVar= "I am global"
+        function outerFn(name){
+            var msg = "good morning!"
+            function greet(){
+                var str = "hello"
+                console.log(str +" "+ name + ". " +msg)
+                console.log(globalVar)
+            }
+            greet();
+        }
+        outerFn("Sharad") */
+        console.log("-----------------")
+        var globalVar= "I am global"
+        function outerFn(name){
+            var msg = "good morning!"
+            function greet(){
+                var str = "hello"
+                console.log(str +" "+ name + ". " +msg)
+                console.log(globalVar)
+            }
+            return greet;
+        }
+        var greetFn = outerFn("Sharad")
+        greetFn()
+//-------------------------------------
+function myTimer(){
+    var name="Sharad"
+    setTimeout(function(){
+        console.log("good morning!"+ name)
+    },3000)
+}
+myTimer()
+console.log("+++++++another closure example")
+function myFunc(){
+    var name= 'Sharad'
+    function displayName(){
+        console.log(name)
+    }
+    anotherFunc(displayName)
+}
+function anotherFunc(something){
+    something()
+}
+myFunc()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

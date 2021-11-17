@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var greetMe = function(){
+            myVar =5; // js will create it globally while execution time
+        }
+        greetMe()
+        //strict mode throws an error when variable is not defined
+        //strict mode has two types global strict mode and function only strict mode
+
+        //global strict mode exp
+        "use strict";        // "use strict" or 'use strict' 
+        var msg = function(){
+            note = 10;
+        }
+        var display= function(){
+            'use strict'
+            tiny =5;
+        }
+        // delete keyword deletes the property of a object, it doesn't work on a variable or object.
+        // var kim = {id:5, name:"sharad"}
+        // delete kim.name it will delete the name property
+
+        //eval and with they create dynamic scope, we should not use them.
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

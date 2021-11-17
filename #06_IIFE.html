@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //IIFE Immediatly Invoked Function Expression is js function that runs as soon as it is defined.
+        //IIFE is a pattern
+        //Global, Global namespace,Global var , global function all indicate var/function that are in global scope and accessible everywhere
+        // exp
+        //var str =" "
+        // function greet(greeting){console.log(greeting)}
+        //these will pollute the global
+        (function(){
+        var msg ="A nice day!"
+        function greeting(){
+            var note="Good Night!!"
+            console.log(note)
+        }
+        greeting()
+    })();
+    //when our execution complete garbage collector will collects the variable and messages
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

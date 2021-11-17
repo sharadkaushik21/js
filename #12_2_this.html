@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Understand bind()
+        //* Also known as Hard Binding
+        //bind does permanent binding of this to an object. Can not be changed.
+        //we change in call and apply but not in bind()
+         // we use bind() in ajax and timers
+         // included in ES5
+         // bind() returns a function with hard binding. When returned function is invoked it will have hard binding of this.
+         //very popular for callbacks, to avoid 'this' confusion.
+         var person = {
+             firstname = "james",
+             greet: function(){
+                 console.log("my name is: ",this.firstname)
+             }
+         }
+         setTimeout(person.greet,2000) // it will give undefined , because when it call back it forgot the variable
+         setTimeout(person.greet.bind(person),2000) 
+         var greetFn = person.greet.bind(person)
+         greetFn();
+// bind has overriden default binding and now greetFn() will always refer to person object.
+         var anotherPerson = {
+             firstname= "Bond"
+         }
+         greetFn.call(anotherPerson); // it will show the james , because greetFn is hard bound
+         //-----------------------------
+         //understand new keyword
+         //* forget about Classes in other languages
+         //* Forget what new does there
+         //- new is an operator that, turns a function into a Constructor
+         // Note these 4 things New keyword does
+         //* Create a brand new object
+         //* Link object to it
+         //* Creates this binding
+         //* Make function return this if function does not already returning some not null value
+       function Human(name,age,sex){
+        this.name=name;
+        this.age=age
+        this.sex= sex
+        this.greet= function(){
+            console.log("hello! ",this.name)
+        }
+      
+       }   
+       var bond = new Human("james Bond",21,'M')
+        var holms = new Human('Sherlock Holms',31,'M')
+
+        function Car(make,model,year,owner){
+            this.make=make;
+            this.model=model;
+            this.year=year;
+            this.owner=owner;
+
+        }
+        var teslaX = new Car('Tesla','Model X',2016,bond)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

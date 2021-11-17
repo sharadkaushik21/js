@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //like lexical scope is for Compilation , Execution Context is for Runtime
+        //In a program, If there is no function,then default is global 
+        // Default Execution context is global
+        //Each function creates a new Execution Context
+
+        //if there is no function we have in Execution Context into Global Object, this and Lexical Envirnoment(OutSide fn)
+        //      Global Execution Context
+        //              |
+        //      ------------------
+        //      |                 |
+        //    Browser           Node
+        //      |                |
+        //  Window Object     Global Object
+        //Every Function has a reference to it's current execution context called this
+        //this is tricky and it's value depends on different conditions.
+        //* this works during Runtime
+        //* May considered as Dynamic Scope
+        //Key to understand is how function is invoked, Not where is declared
+        function persona(){
+            var fName="james"
+            var lName = "Bond"
+            console.log(this.fName,this.lName)
+            console.log(this) 
+        }
+        persona()
+
+        var me = {
+            myName :"James Bond",
+            printName : function(){
+                console.log(this.myName)
+            }
+        }
+        me.printName() // we call printName() in the reference of me and above exp was calling without any object reference, when you are referencing any object. by default object will be Global 
+        // variable me has a object , So me is an object .
+        //myName is a key ,"james bond" is the value
+        //object is the key value pair
+        var m2 = me.printName;
+        m2(); // it will give undefined , now m2 has no reference to me
+
+//----------------------------
+'use strict'
+function persona1(){
+            var fName="james"
+            var lName = "Bond"
+            console.log(this.fName,this.lName) //it will give the error
+            console.log(this) // this will be undefined in strict mode 
+        }
+        persona1()
+//'use strict'
+function person(fname,lname){
+    this.firstName = fname;
+    this.lastName= lname;
+    console.log(this.firstName,this.lastName);
+}
+person("james","bond");
+//this points the global object and when in strict mode it is points to the global object when this value will be undefined.
+// this is undefined in strict mode
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

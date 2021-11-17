@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //hoisting is not the offical js terminology . it is not present in js official documentaion. Although developers talks about it.
+        // hositing is simply how js Engine compiles js code
+        sportName("football")
+        function sportName(name){
+            console.log(`My favorite sport is ${name} `)
+        } 
+        num=6
+        num+=7
+        var num
+        console.log(num)
+        // all these works will works because lexical scope
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // we are returing a set of functions, we are returning a object which has many function expression
+        // the variable in this that is encapsulated
+        // we u
+        var MyModule = function(){
+            var privateVariable = "I am a private var"
+            return {
+                add: function(str){
+                    console.log(`I have added a new String ${str}`)
+                    console.log(`${privateVariable} : is accessible`)
+                },
+                edit: function(str){
+                    console.log(`I have edited a new String ${str}`)
+                    console.log(`${privateVariable} : is accessible`)
+                },
+                delete: function(str){
+                    console.log(`I have deleted a new String ${str}`)
+                    console.log(`${privateVariable} : is accessible`)
+                },
+                get: function(str){
+                    console.log(`I have got a new String ${str}`)
+                    console.log(`${privateVariable} : is accessible`)
+                }
+            }
+        }
+        var app = MyModule();
+        app.add("Sharad")
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

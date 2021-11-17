@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var msg = "A nice day!"
+        function greet(){
+
+            console.log("msg before: " + msg); // we will get here undefined because when lexical scope alloated msg bacame local variable for this function.
+            var msg="good night"
+            console.log("msg after: "+msg) 
+        }
+        greet()
+        // js is a compiled lang , it is happened in just in time JIT. It is different than other languages.
+    // Lexical Scope: During compilation time that scope allotment that is Lexical scope
+        function doSomeActivity(activity){ //js will implicitly defines the activity 
+            console.log("activity before: "+activity)
+            activity = "play"
+            console.log("activity after: "+activity)
+            sport = "football" // js will make sport variable in the global
+            console.log("sport after: "+sport)
+        }
+        var something ="hello"
+        doSomeActivity(something)
+        console.log("is sport global? "+sport)
+        console.log("is activity global ?"+activity)
+
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
